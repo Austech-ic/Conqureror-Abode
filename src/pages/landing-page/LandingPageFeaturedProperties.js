@@ -18,22 +18,36 @@ import { LuBath } from 'react-icons/lu';
 export const LandingPageFeaturedProperties = () => {
   const Properties = ({ image, sqf, description, beds, baths, price }) => {
     return (
-      <Box bg="white" borderRadius={'6px'} w="full">
-        <Flex h="60">
-          <Box w="60">
+      <Box
+        bg="white"
+        borderRadius={'6px'}
+        w="full"
+        border={'1px solid #F5F5F5'}
+      >
+        <Flex h={['auto', '60']} flexDirection={['column', 'row']}>
+          <Box h={['52', '60']} w={['full', '60']}>
             <Image
-              objectFit={'cover'}
+              objectFit={'fill'}
               h="full"
               w="full"
               src={image}
+              display={['none', 'block']}
               borderLeftRadius={'5px'}
+            />
+            <Image
+              objectFit={'cover'}
+              h="100%"
+              w="full"
+              display={['block', 'none']}
+              src={image}
+              borderTopRadius={'5px'}
             />
           </Box>
           <Flex
             position={'relative'}
-            h="full"
+            h={['60', 'full']}
             flexDirection={'column'}
-            px="5"
+            px="3"
             pt="4"
           >
             <Text fontWeight="500" fontSize="16" textAlign={'left'}>
@@ -43,27 +57,27 @@ export const LandingPageFeaturedProperties = () => {
             <Flex gap="4" my="3">
               <Flex gap="1">
                 <GiCornerFlag size="20" color="#E6B242" />
-                <Text color="#282828" fontSize={'sm'}>
+                <Text color="#282828" fontSize={'12'}>
                   {sqf}
                 </Text>
               </Flex>
               <Flex gap="1">
                 <MdOutlineBed size="20" color="#E6B242" />
-                <Text color="#282828" fontSize={'sm'}>
+                <Text color="#282828" fontSize={'12'}>
                   {beds}
                 </Text>
               </Flex>
               <Flex gap="1">
                 <LuBath size="20" color="#E6B242" />
-                <Text color="#282828" fontSize={'sm'}>
+                <Text color="#282828" fontSize={'12'}>
                   {baths}
                 </Text>
               </Flex>
             </Flex>
             <Divider />
 
-            <Box position={'absolute'} left="5" bottom="6" textAlign={'left'}>
-              <Text fontSize={'xs'} color={'#8C8C8C'}>
+            <Box position={'absolute'} left="5" bottom="4" textAlign={'left'}>
+              <Text fontSize={'sm'} color={'#8C8C8C'}>
                 Price
               </Text>
               <Text color="#282828" fontWeight={'500'} fontSize={'20'}>
@@ -77,19 +91,20 @@ export const LandingPageFeaturedProperties = () => {
     );
   };
   return (
-    <Box bg="#F3F4FF" px="40" py="20" h="auto">
+    <Box px={['5', '40']} bg="#F3F4FF" py="20" h="auto">
       <Heading
         w="full"
         textTransform={'uppercase'}
         fontFamily={'Rozha One'}
         color="#282828"
+        fontSize={['28', '36px']}
       >
         Featured{' '}
         <Text as="span" color="#E6B242">
           Properties
         </Text>
       </Heading>
-      <Text textAlign={'center'} fontSize="20">
+      <Text textAlign={'center'} fontSize={['16', '24px']}>
         A plateform to buy, and rent properties without any agent <br></br> or
         commisions.
       </Text>

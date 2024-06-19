@@ -3,12 +3,13 @@ import React from 'react';
 
 export const LandingPageAboutUs = () => {
   return (
-    <Box px="40" py="20" h="auto">
+    <Box px={['5', '40']} py={['20']} h="auto">
       <Heading
         w="fit-content"
         borderLeft={'4px solid #E6B242'}
         fontFamily={'Rozha One'}
         color="#E6B242"
+        fontSize={['28', '36px']}
         pl="2"
       >
         About{' '}
@@ -17,15 +18,27 @@ export const LandingPageAboutUs = () => {
         </Text>
       </Heading>
 
-      <Flex mt="5" gap="5">
-        <Box h="450px" w="md" position="relative">
+      <Flex
+        flexDirection={['column', 'row']}
+        mt="5"
+        mb={['auto', '28']}
+        gap={['10', '5']}
+      >
+        <Box
+          display={['flex', 'auto']}
+          flexDirection={'column'}
+          gap="5"
+          h="450px"
+          w={['auto', 'md']}
+          position="relative"
+        >
           <Box
             top="0"
             h="52"
             w="72"
             bg="#BF8181"
             borderRadius={'10px'}
-            position="absolute"
+            position={['auto', 'absolute']}
           ></Box>
           <Box
             h="72"
@@ -34,7 +47,7 @@ export const LandingPageAboutUs = () => {
             left="24"
             top="28"
             borderRadius={'10px'}
-            position="absolute"
+            position={['auto', 'absolute']}
             zIndex={'1'}
           ></Box>
           <Box
@@ -43,17 +56,26 @@ export const LandingPageAboutUs = () => {
             bottom="0"
             w="60"
             bg="#BF8181"
-            position="absolute"
+            position={['auto', 'absolute']}
           ></Box>
         </Box>
-        <Box textAlign="left" h="xs" w="md">
-          <Text color="black" fontSize="40" fontFamily={'Rozha One'}>
+        <Box textAlign="left" h={['auto', 'xs']} w={['full', '540px']}>
+          <Text
+            lineHeight={'50px'}
+            color="black"
+            fontSize={['32', '40px']}
+            fontFamily={'Rozha One'}
+          >
             Conquerors{' '}
             <Text as="span" color="#E6B242">
-              Abode <br></br>& Properties LTD
+              Abode & Properties LTD
             </Text>
           </Text>
-          <Text mt="5" maxW="370px" fontSize={'16'}>
+          <Text
+            maxW={['full', '460px']}
+            fontSize={['16', '20px']}
+            lineHeight={'42px'}
+          >
             Welcome to Conquerors Abode and Properties Ltd, your trusted,
             reliable and premium real estate company .We are dedicated to
             helping you find the perfect property, whether you are looking for
@@ -67,7 +89,7 @@ export const LandingPageAboutUs = () => {
             px="10"
             borderRadius={'0'}
             fontWeight="400"
-            fontSize="sm"
+            fontSize="16px"
             bg="#E6B242"
             color="white"
           >

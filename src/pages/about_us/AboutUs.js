@@ -41,7 +41,14 @@ export const AboutUs = () => {
             {title}
           </Text>
         </Center>
-        <Text textAlign="center" fontSize="20px" mt="2" px="4" w="full">
+        <Text
+          textAlign="center"
+          fontSize="18px"
+          mt="2"
+          px="8"
+          w="full"
+          lineHeight={'30px'}
+        >
           {desc}
         </Text>
       </Box>
@@ -50,7 +57,7 @@ export const AboutUs = () => {
   return (
     <Box>
       <Box
-        height="55vh"
+        height="50vh"
         backgroundImage={CoverImage}
         backgroundSize="cover"
         backgroundPosition="top"
@@ -139,7 +146,7 @@ export const AboutUs = () => {
               Abode &<br></br> Properties LTD
             </Text>
           </Text>
-          <Text lineHeight={'42px'} fontSize={'20px'} mt="5" maxW="460px">
+          <Text lineHeight={'42px'} fontSize="18px" mt="5" maxW="445px">
             Welcome to Conquerors Abode and Properties Ltd, your trusted,
             reliable and premium real estate company .We are dedicated to
             helping you find the perfect property, whether you are looking for
@@ -156,7 +163,7 @@ export const AboutUs = () => {
         <Text
           mt="14"
           lineHeight={'42px'}
-          fontSize={'20px'}
+          fontSize="18px"
           textAlign={'left'}
           color="#282828"
         >
@@ -210,7 +217,7 @@ export const AboutUs = () => {
               </Text>{' '}
             </Text>
           </Center>
-          <Text fontSize="24px">
+          <Text fontSize="22px">
             To deliver exceptional client experiences by achieving three key{' '}
             <br></br>
             objectives
@@ -258,7 +265,7 @@ export const AboutUs = () => {
               </Text>{' '}
             </Text>
           </Center>
-          <Text fontSize="24px">
+          <Text fontSize="22px">
             To be the most trusted and leading real estate firm in Nigeria that
             provides lasting <br></br> relationships and results while making
             shelter a reality for all
@@ -281,7 +288,7 @@ export const AboutUs = () => {
               </Text>{' '}
             </Text>
           </Center>
-          <Text textAlign="center" fontSize="24px" w="full">
+          <Text textAlign="center" fontSize="22px" w="full">
             These goals reflect our commitment to excellence, integrity, and
             customer <br></br>satisfaction. Conquerors Abode and Properties Ltd
             is dedicated to providing <br></br> the best possible real estate
@@ -297,35 +304,81 @@ export const AboutUs = () => {
           >
             <Goals
               title={'Customer Satisfaction '}
+              desc={`Our 
+                primary goal is to ensure that our clients are highly satisfied with their real estate experience. We aim to exceed their expectations by delivering exceptional service, guiding them through the process, and providing them with the best possible property options.`}
+            />
+            <Goals
+              title={'Quality Listings'}
               desc={
-                'Our primary goal is to ensure that our clients are highly satisfied with their real estate experience. We aim to exceed their expectations by delivering exceptional service, guiding them through the process, and providing them with the best possible property options.'
+                ' We strive to maintain a comprehensive and up-to-date database of high-quality listings. Our goal is to offer a diverse range of properties that meet the various needs and preferences of our clients. We carefully curate our listings to ensure they are in prime locations and cater to different budget ranges.'
               }
             />
             <Goals
-              title={'Customer Satisfaction '}
+              title={'Transparency and Integrity'}
               desc={
-                'Our primary goal is to ensure that our clients are highly satisfied with their real estate experience. We aim to exceed their expectations by delivering exceptional service, guiding them through the process, and providing them with the best possible property options.'
+                'We believe in conducting our business with transparency and integrity. Our goal is to build trust with our clients and ensure that they have all the necessary information to make informed decisions about their real estate transactions. We adhere to high ethical standards and strive to foster long-lasting relationships based on trust and honesty.'
               }
             />
             <Goals
-              title={'Customer Satisfaction '}
+              title={'Market Knowledge'}
               desc={
-                'Our primary goal is to ensure that our clients are highly satisfied with their real estate experience. We aim to exceed their expectations by delivering exceptional service, guiding them through the process, and providing them with the best possible property options.'
+                'As a leading real estate agency, we aim to stay at the forefront of market trends and developments. Our team of experts continuously researches and analyzes the real estate market to provide our clients with accurate and up-to-date information. Our goal is to be a reliable source of market insight and help our clients make informed decisions.'
               }
             />
             <Goals
-              title={'Customer Satisfaction '}
+              title={'Collaboration and Expertise'}
               desc={
-                'Our primary goal is to ensure that our clients are highly satisfied with their real estate experience. We aim to exceed their expectations by delivering exceptional service, guiding them through the process, and providing them with the best possible property options.'
+                'We encourage a collaborative approach within our team and with our clients. Our agents work closely with each client, providing personalized attention and using their expertise to understand their specific needs. Our goal is to leverage our knowledge and experience to assist our clients in achieving their real estate goals.'
               }
             />
             <Goals
-              title={'Customer Satisfaction '}
+              title={'Long-Term Relationships'}
               desc={
-                'Our primary goal is to ensure that our clients are highly satisfied with their real estate experience. We aim to exceed their expectations by delivering exceptional service, guiding them through the process, and providing them with the best possible property options.'
+                'We aim to build long-term relationships with our clients. Our goal is to be their go-to real estate agency for all their future needs. We provide post-sale support, property management services, and rental assistance to foster lasting relationships. We want to be a trusted partner who helps our clients navigate the real estate market throughout their lifetime.'
               }
             />
           </SimpleGrid>
+          <Box w="full" mt="10">
+            <Flex
+              flexDirection={'column'}
+              justifyContent={'center'}
+              alignItems={'center'}
+              w="full"
+            >
+              <Center
+                flexDirection={'column'}
+                justifyContent="center"
+                alignItem="center"
+              >
+                <Box p="2" borderRadius="full" bg="#E6B242">
+                  <FiCheckCircle color="white" size="28" />
+                </Box>
+                <Text
+                  mt="2"
+                  fontSize="24px"
+                  fontFamily={'Rozha One'}
+                  color={'#312F2F'}
+                >
+                  Growth and Innovation
+                </Text>
+              </Center>
+              <Text
+                textAlign="center"
+                fontSize="18px"
+                mt="2"
+                fontWeight={'400'}
+                px="6"
+                lineHeight={'30px'}
+                w="lg"
+              >
+                We are committed to continuous growth and innovation in our
+                industry. Our goal is to constantly enhance our services and
+                adapt to the changing needs of our clients. We strive to embrace
+                new technologies and innovative approaches that can improve the
+                efficiency and quality of our services
+              </Text>
+            </Flex>
+          </Box>
         </Box>
 
         <Box mt="28">
@@ -345,11 +398,11 @@ export const AboutUs = () => {
             </Text>
           </Text>
           <Text
-            mt="7"
+            mt="3"
             color="#282828"
-            fontSize={'20px'}
+            fontSize="18px"
             textAlign="left"
-            fontWeight="42px"
+            lineHeight={'42px'}
           >
             Conquerors Abode and Properties Ltd, although established in
             2023,have become a trusted name in the real estate industry, known

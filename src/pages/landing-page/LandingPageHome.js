@@ -32,13 +32,14 @@ export const LandingPageHome = () => {
           flexDirection={'column'}
           h="full"
           w="fit-content"
-          pr="48"
+          pr={['0', '48']}
+          mx={['5', 'auto']}
         >
           <Text
             zIndex={'2'}
-            fontSize="7xl"
+            fontSize={['4xl', '7xl']}
             fontWeight="400"
-            lineHeight={'84px'}
+            lineHeight={['40px', '84px']}
             mb="4"
             mt="44"
             color="white"

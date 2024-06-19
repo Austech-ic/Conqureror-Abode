@@ -7,19 +7,21 @@ import {
   Stack,
   Collapse,
   Icon,
-  Link,
   Popover,
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  Image,
 } from '@chakra-ui/react';
 import { IoMdClose } from 'react-icons/io';
 import { IoChevronDown } from 'react-icons/io5';
 import { MdOutlineChevronRight } from 'react-icons/md';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import React from 'react';
+import Logo from '../../assets/images/logo.png';
+import { Link } from 'react-router-dom';
 
 export default function TopNavbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -31,7 +33,7 @@ export default function TopNavbar() {
         color={'white'}
         minH={'60px'}
         py={{ base: 2 }}
-        px={{ base: 4, md: 56 }}
+        px={{ base: 4, md: 20 }}
         align={'center'}
         justifyContent={'space-between'}
         // backdropFilter="saturate(180%) blur(5px)"
@@ -54,17 +56,20 @@ export default function TopNavbar() {
             aria-label={'Toggle Navigation'}
           />
         </Flex>
-        <Text
-          textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-          color={'white'}
-          font
-          textTransform={'uppercase'}
-          fontFamily={'Montaga'}
-        >
-          Conquerors abode &<br></br> Properties Ltd
-        </Text>
+        <Flex alignItems={'center'} w="80">
+          <Image src={Logo} />
+          <Text
+            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+            color={'white'}
+            font
+            textTransform={'uppercase'}
+            fontFamily={'Montaga'}
+          >
+            Conquerors abode &<br></br> Properties Ltd
+          </Text>
+        </Flex>
 
-        <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+        <Flex display={{ base: 'none', md: 'flex' }}>
           <DesktopNav />
         </Flex>
 
@@ -79,14 +84,14 @@ export default function TopNavbar() {
             display={{ base: 'none', md: 'inline-flex' }}
             fontSize={'sm'}
             fontFamily={'Inter'}
-            fontWeight={500}
+            fontWeight={400}
             color={'white'}
             bg={'#E6B242'}
             textTransform={'uppercase'}
             href={'#'}
             borderRadius={'0'}
             _hover={{
-              bg: 'pink.300',
+              bg: '#E6B242',
             }}
           >
             View Our Project
@@ -107,25 +112,25 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
 
   return (
-    <Stack direction={'row'} spacing={4}>
+    <Stack direction={'row'} spacing={1}>
       {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
+        <Box key={navItem.label} w="24">
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
-              <Link
-                p={2}
-                href={navItem.href ?? '#'}
-                fontSize={'sm'}
-                fontWeight={500}
-                color={linkColor}
-                fontFamily={'Inter'}
-                textTransform={'uppercase'}
-                _hover={{
-                  textDecoration: 'none',
-                  color: linkHoverColor,
-                }}
-              >
-                {navItem.label}
+              <Link p={2} to={navItem.href ?? '#'}>
+                <Text
+                  fontSize={'sm'}
+                  fontWeight={400}
+                  color={linkColor}
+                  fontFamily={'Inter'}
+                  textTransform={'uppercase'}
+                  _hover={{
+                    textDecoration: 'none',
+                    color: 'white',
+                  }}
+                >
+                  {navItem.label}
+                </Text>
               </Link>
             </PopoverTrigger>
 
@@ -135,8 +140,8 @@ const DesktopNav = () => {
                 boxShadow={'xl'}
                 bg={popoverContentBgColor}
                 p={4}
-                rounded={'xl'}
-                minW={'sm'}
+                rounded={'xs'}
+                w="fit-content"
               >
                 <Stack>
                   {navItem.children.map((child) => (
@@ -155,36 +160,22 @@ const DesktopNav = () => {
 const DesktopSubNav = ({ label, href, subLabel }) => {
   return (
     <Link
-      href={href}
+      to={href}
       role={'group'}
       display={'block'}
       p={2}
-      rounded={'md'}
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
+      rounded={'0'}
+      _hover={'gray.900'}
     >
-      <Stack direction={'row'} align={'center'}>
-        <Box>
-          <Text
-            transition={'all .3s ease'}
-            _groupHover={{ color: 'pink.400' }}
-            fontWeight={500}
-          >
-            {label}
-          </Text>
-          <Text fontSize={'sm'}>{subLabel}</Text>
-        </Box>
-        <Flex
-          transition={'all .3s ease'}
-          transform={'translateX(-10px)'}
-          opacity={0}
-          _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
-          justify={'flex-end'}
-          align={'center'}
-          flex={1}
-        >
-          <Icon color={'pink.400'} w={5} h={5} as={MdOutlineChevronRight} />
-        </Flex>
-      </Stack>
+      <Text
+        transition={'all .3s ease'}
+        _groupHover={{ color: 'black' }}
+        fontWeight={400}
+        color="black"
+        textAlign={'left'}
+      >
+        {label}
+      </Text>
     </Link>
   );
 };
@@ -211,7 +202,7 @@ const MobileNavItem = ({ label, children, href }) => {
       <Flex
         py={2}
         as={Link}
-        href={href ?? '#'}
+        to={href ?? '#'}
         justify={'space-between'}
         align={'center'}
         _hover={{
@@ -269,13 +260,19 @@ const NAV_ITEMS = [
     label: 'Projects',
     href: '/project',
   },
+
   {
     label: 'Pages',
     children: [
       {
-        label: 'Job Board',
-        subLabel: 'Find your dream design job',
-        href: '#',
+        label: 'Our Team',
+
+        href: '/our-team',
+      },
+      {
+        label: 'Blog',
+
+        href: '/blog',
       },
       {
         label: 'Freelance Projects',
