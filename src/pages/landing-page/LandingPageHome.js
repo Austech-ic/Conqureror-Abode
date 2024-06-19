@@ -5,7 +5,7 @@ import { IoIosArrowDroprightCircle } from 'react-icons/io';
 export const LandingPageHome = () => {
   return (
     <Box
-      height={['auto', '150vh']}
+      height={['100vh', '100vh']}
       pb={['20', 'auto']}
       backgroundImage={CoverImage}
       backgroundSize="cover"
