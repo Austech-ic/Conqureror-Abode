@@ -33,10 +33,10 @@ export const Footer = () => {
     <Box bg="#252B36" color={'white'} mt="20" position={'relative'}>
       <Box
         top="-24"
-        left="12%"
-        h={['auto', '40']}
-        w={['auto', '5xl']}
-        position={['auto', 'absolute']}
+        left={['', '', '', '0%', '12%']}
+        h={['auto', 'auto', '56', '40']}
+        w={['auto', 'auto', 'auto', 'auto', '5xl']}
+        position={['auto', 'auto', 'auto', 'absolute']}
         pt="10"
         px="5"
       >
@@ -52,20 +52,20 @@ export const Footer = () => {
           <Flex
             flexDirection={['column', 'row']}
             h="100%"
-            px={['5', '40']}
-            gap="5"
+            px={['5', '5', '10', '40']}
+            gap={['5', '5', '10', '5']}
             alignItems={'center'}
           >
             <Box flexGrow={'1'} textAlign={'left'} color="black">
               <Text fontWeight={'500'} fontSize={['16px', '20px']}>
                 Subscribe to Newsletter!
               </Text>
-              <Text color="#878787" fontSize={['14px', '20px']}>
+              <Text color="#878787" fontSize={['14px', '', '', '12px', '20px']}>
                 Subscribe to get latest update and information
               </Text>
             </Box>
             <Flex
-              display={['none', 'flex']}
+              display={['none', 'none', 'none', 'flex']}
               flexGrow={'1'}
               border={'1px solid #DCE1E7'}
               borderRadius={'80px'}
@@ -92,12 +92,13 @@ export const Footer = () => {
             </Flex>
             <Flex
               w="full"
-              display={['flex', 'none']}
+              display={['flex', 'flex', 'flex', 'none']}
               flexGrow={'1'}
               flexDirection={['column', 'row']}
               borderRadius={'80px'}
               py="3"
               bg="#FFFFFF"
+              gap="3"
             >
               <Input
                 border={'1px solid #DCE1E7'}
@@ -107,7 +108,6 @@ export const Footer = () => {
                 _active={{ outline: '0', border: '0' }}
               />
               <Button
-                mt="3"
                 px="5"
                 py="2"
                 w="fit-content"
@@ -221,8 +221,7 @@ export const Footer = () => {
           </Flex>
         </Flex>
       </Container>
-      {/* <Divider border="1px solid #494949" /> */}
-      <Box py={2} border="1px solid #494949">
+      <Box py={2} borderTop="1px solid #494949">
         <Text pb="3" fontSize={'sm'} textAlign={'center'}>
           Copyright © 2024 Conqueroros
         </Text>

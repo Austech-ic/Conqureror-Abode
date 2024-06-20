@@ -44,22 +44,36 @@ export const Projects = () => {
   };
   const Properties = ({ image, sqf, description, beds, baths, price }) => {
     return (
-      <Box bg="white" borderRadius={'6px'} w="full">
-        <Flex h="60">
-          <Box w="60">
+      <Box
+        bg="white"
+        borderRadius={'6px'}
+        w="full"
+        border={'1px solid #F5F5F5'}
+      >
+        <Flex h={['auto', '60']} flexDirection={['column', 'row']}>
+          <Box h={['52', '60']} w={['full', '60']}>
             <Image
-              objectFit={'cover'}
+              objectFit={'fill'}
               h="full"
               w="full"
               src={image}
+              display={['none', 'block']}
               borderLeftRadius={'5px'}
+            />
+            <Image
+              objectFit={'cover'}
+              h="100%"
+              w="full"
+              display={['block', 'none']}
+              src={image}
+              borderTopRadius={'5px'}
             />
           </Box>
           <Flex
             position={'relative'}
-            h="full"
+            h={['60', 'full']}
             flexDirection={'column'}
-            px="5"
+            px="3"
             pt="4"
           >
             <Text fontWeight="500" fontSize="16" textAlign={'left'}>
@@ -69,26 +83,26 @@ export const Projects = () => {
             <Flex gap="4" my="3">
               <Flex gap="1">
                 <GiCornerFlag size="20" color="#E6B242" />
-                <Text color="#282828" fontSize={'sm'}>
+                <Text color="#282828" fontSize={'12'}>
                   {sqf}
                 </Text>
               </Flex>
               <Flex gap="1">
                 <MdOutlineBed size="20" color="#E6B242" />
-                <Text color="#282828" fontSize={'sm'}>
+                <Text color="#282828" fontSize={'12'}>
                   {beds}
                 </Text>
               </Flex>
               <Flex gap="1">
                 <LuBath size="20" color="#E6B242" />
-                <Text color="#282828" fontSize={'sm'}>
+                <Text color="#282828" fontSize={'12'}>
                   {baths}
                 </Text>
               </Flex>
             </Flex>
             <Divider />
 
-            <Box position={'absolute'} left="5" bottom="6" textAlign={'left'}>
+            <Box position={'absolute'} left="5" bottom="4" textAlign={'left'}>
               <Text fontSize={'sm'} color={'#8C8C8C'}>
                 Price
               </Text>
@@ -139,7 +153,8 @@ export const Projects = () => {
         />
 
         <Box
-          position="absolute"
+          position={'absolute'}
+          display={['none', 'block']}
           bottom="-60"
           bg="white"
           w="6xl"
@@ -205,9 +220,78 @@ export const Projects = () => {
           </Flex>
         </Box>
       </Box>
-      <Box px="40" py="20" position={'relative'}>
+      <Box
+        display={['block', 'none']}
+        bg="white"
+        w={['auto', '6xl']}
+        m="5"
+        boxShadow={'2xl'}
+        borderRadius="12px"
+        h={'auto'}
+      >
+        <Flex
+          flexDirection={['column', 'row']}
+          justifyContent={'space-between'}
+          p="10"
+          gap="8"
+        >
+          <FormControl>
+            <FormLabel fontSize="16">Search:</FormLabel>
+            <Input
+              border="0"
+              bg="#F6F6F6FB"
+              borderRadius="0"
+              _placeholder={{ fontSize: 'sm' }}
+              placeholder="Search for property"
+            />
+            <Button
+              justifyContent={'left'}
+              display="flex"
+              fontSize="sm"
+              mt="5"
+              px="10"
+              w="fit-content"
+              borderRadius={'0'}
+              bg="#E6B242"
+              color="white"
+            >
+              Search
+            </Button>
+          </FormControl>
+
+          <FormControl>
+            <FormLabel fontSize="16">Select Categories:</FormLabel>
+            <Select
+              border="0"
+              bg="#F6F6F6FB"
+              borderRadius="0"
+              _placeholder={{ fontSize: 'sm' }}
+              placeholder="House"
+              fontSize="sm"
+              color={'#909090'}
+            >
+              <option></option>
+            </Select>
+          </FormControl>
+          <FormControl>
+            <FormLabel fontSize="16">Price Range: </FormLabel>
+            <Select
+              border="0"
+              bg="#F6F6F6FB"
+              borderRadius="0"
+              _placeholder={{ fontSize: 'sm' }}
+              placeholder="House"
+              fontSize="sm"
+              color={'#909090'}
+            >
+              <option></option>
+            </Select>
+          </FormControl>
+        </Flex>
+      </Box>
+      <Box px={['5', '40']} py={['5', '20']} position={'relative'}>
         <Center flexDirection={'column'}>
-          <SimpleGrid mt="20" spacing="10" columns={['1', '2']}>
+          <SimpleGrid mt="20" spacing={'10'} columns={['1', '2']}>
             <Properties
               image={CoverImage}
               sqf={'8000sqf'}

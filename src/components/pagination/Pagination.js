@@ -1,6 +1,13 @@
 // Pagination.js
 import React from 'react';
-import { Button, ButtonGroup, Box, IconButton, Flex } from '@chakra-ui/react';
+import {
+  Button,
+  ButtonGroup,
+  Box,
+  IconButton,
+  Flex,
+  SimpleGrid,
+} from '@chakra-ui/react';
 import { BiArrowFromLeft, BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 
 const Pagination = ({
@@ -16,7 +23,12 @@ const Pagination = ({
   }
 
   return (
-    <Flex gap="3">
+    <SimpleGrid
+      justifyContent={'center'}
+      alignItems={'center'}
+      columns={['5', 'auto']}
+      gap="3"
+    >
       <Button
         borderRadius={'full'}
         border="1px solid #F5F5F5"
@@ -26,6 +38,7 @@ const Pagination = ({
         fontWeight={'400'}
         onClick={previousPage}
         leftIcon={BiArrowFromLeft}
+        w="fit-content"
       />
       {pageNumbers.map((number) => (
         <Button
@@ -34,7 +47,7 @@ const Pagination = ({
           key={number}
           bg="none"
           h="9"
-          w="9"
+          w="fit-content"
           fontSize={'sm'}
           fontWeight={'400'}
           onClick={() => paginate(number)}
@@ -49,10 +62,11 @@ const Pagination = ({
         fontSize={'sm'}
         fontWeight={'400'}
         onClick={previousPage}
+        w="fit-content"
       >
         Next
       </Button>
-    </Flex>
+    </SimpleGrid>
   );
 };
 

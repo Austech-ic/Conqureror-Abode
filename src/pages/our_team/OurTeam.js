@@ -40,14 +40,14 @@ export const OurTeam = () => {
           bgGradient="linear(to-r, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0))"
         />
       </Box>
-      <Box px="40" py="20" h="auto">
+      <Box px={['5', '40']} py="20" h="auto">
         <Heading
           w="fit-content"
           borderLeft={'4px solid #E6B242'}
           fontFamily={'Rozha One'}
           color="#312F2F"
           pl="2"
-          fontSize={'36px'}
+          fontSize={['28', '36px']}
           fontWeight={'400'}
         >
           Met Our{' '}
@@ -55,7 +55,12 @@ export const OurTeam = () => {
             Agents
           </Text>
         </Heading>
-        <Text textAlign={'left'} fontWeight={'400'} mt="8" fontSize={'24px'}>
+        <Text
+          textAlign={'left'}
+          fontWeight={'400'}
+          mt={['3', '8']}
+          fontSize={['18px', '22px']}
+        >
           Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc<br></br>{' '}
           vulputate libero et velit interdum, ac aliquet odio mattis.
         </Text>

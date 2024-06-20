@@ -42,11 +42,16 @@ export const Blog = () => {
   };
   const BlogPost = ({ image, title, readTime }) => {
     return (
-      <Box bg="white" w="xs" borderRadius={'12px'} border="1px solid #F5F5F5">
+      <Box
+        bg="white"
+        w={['auto', 'xs']}
+        borderRadius={'12px'}
+        border="1px solid #F5F5F5"
+      >
         <Box h="52">
-          <Image borderTopRadius={'12px'} src={image} />
+          <Image w="full" borderTopRadius={'12px'} src={image} />
         </Box>
-        <Box pb="4" px="5" textAlign={'left'}>
+        <Box pb="4" pt="5" px="5" textAlign={'left'}>
           <Flex alignItems={'center'} justifyContent={'right'} gap="1">
             <IoMdTime color={'#8C8C8C'} />
             <Text fontSize={'14px'} color={'#8C8C8C'}>
@@ -65,8 +70,15 @@ export const Blog = () => {
 
           <Divider />
           <Link>
-            <Text fontWeight="500" mt="3" fontSize={'16px'} color={'#E6B242'}>
-              Read More.
+            <Text
+              borderBottom="1px solid #E6B242"
+              fontWeight="400"
+              mt="3"
+              fontSize={'14px'}
+              color={'#E6B242'}
+              w="fit-content"
+            >
+              Read More
             </Text>
           </Link>
         </Box>
@@ -109,8 +121,8 @@ export const Blog = () => {
           bgGradient="linear(to-r, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0))"
         />
       </Box>
-      <Box px="40" py="20">
-        <SimpleGrid spacing={'10'} columns={[1, 2, 3, 3]}>
+      <Box px={['5', '5', '5', '5', '40']} py="20">
+        <SimpleGrid spacing={'10'} columns={[1, 2, 2, 3]}>
           <BlogPost
             title="Real estate, the next level power house"
             readTime={'4mins read'}

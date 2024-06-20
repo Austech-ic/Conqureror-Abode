@@ -47,18 +47,20 @@ export default function TopNavbar() {
             onClick={onToggle}
             icon={
               isOpen ? (
-                <IoMdClose w={3} h={3} />
+                <IoMdClose color={'#E6B242'} w={3} h={3} />
               ) : (
-                <RxHamburgerMenu w={5} h={5} />
+                <RxHamburgerMenu color={'#E6B242'} w={5} h={5} />
               )
             }
             variant={'ghost'}
             aria-label={'Toggle Navigation'}
           />
         </Flex>
-        <Flex alignItems={'center'} w="80">
+
+        <Flex alignItems={'center'} w={['auto', 'auto', '20', '80']}>
           <Image src={Logo} />
           <Text
+            display={['none', 'none', 'none', 'block']}
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             color={'white'}
             font
@@ -237,7 +239,7 @@ const MobileNavItem = ({ label, children, href }) => {
         >
           {children &&
             children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
+              <Link key={child.label} py={2} to={child.href}>
                 {child.label}
               </Link>
             ))}
@@ -273,11 +275,6 @@ const NAV_ITEMS = [
         label: 'Blog',
 
         href: '/blog',
-      },
-      {
-        label: 'Freelance Projects',
-        subLabel: 'An exclusive list for contract work',
-        href: '#',
       },
     ],
   },
