@@ -3,7 +3,7 @@ import React from 'react';
 
 export const LandingPageAboutUs = () => {
   return (
-    <Box px={['5', '40']} py={['20']} h="auto">
+    <Box px={['5', '40']} py={['20']} h="auto" zIndex={'3'} position="relative">
       <Heading
         w="fit-content"
         borderLeft={'4px solid #E6B242'}

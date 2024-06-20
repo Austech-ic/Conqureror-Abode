@@ -104,7 +104,7 @@ export const LandingPageFeaturedProperties = () => {
           Properties
         </Text>
       </Heading>
-      <Text textAlign={'center'} fontSize={['16', '24px']}>
+      <Text textAlign={'center'} fontSize={['18px', '22px']}>
         A plateform to buy, and rent properties without any agent <br></br> or
         commisions.
       </Text>

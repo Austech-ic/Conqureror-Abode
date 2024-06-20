@@ -37,7 +37,6 @@ export const Footer = () => {
         h={['auto', '40']}
         w={['auto', '5xl']}
         position={['auto', 'absolute']}
-        boxShadow={'2xl'}
         pt="10"
         px="5"
       >
@@ -45,6 +44,7 @@ export const Footer = () => {
           py="5"
           borderRadius={'24px'}
           bg="#FCFCFC"
+          boxShadow={'2xl'}
           position="relative"
           h="100%"
         >

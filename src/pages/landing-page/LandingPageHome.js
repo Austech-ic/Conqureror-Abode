@@ -2,16 +2,47 @@ import { Box, Button, Divider, Flex, Image, Text } from '@chakra-ui/react';
 import React from 'react';
 import CoverImage from '../../assets/images/cover_image.png';
 import { IoIosArrowDroprightCircle } from 'react-icons/io';
+import Wave1 from '../../assets/images/wave1.png';
+import Wave2 from '../../assets/images/wave2.png';
+import Wave3 from '../../assets/images/Vector 1.png';
 export const LandingPageHome = () => {
   return (
     <Box
-      height={['100vh', '100vh']}
+      height={['auto', '120vh']}
       pb={['20', 'auto']}
       backgroundImage={CoverImage}
       backgroundSize="cover"
       backgroundPosition="top"
       position="relative"
     >
+      <Box>
+        <Image
+          src={Wave1}
+          w="full"
+          zIndex={'2'}
+          objectFit={'fill'}
+          position="absolute"
+          bottom={'-48'}
+        />
+      </Box>
+      <Image
+        src={Wave2}
+        w="full"
+        zIndex={'2'}
+        objectFit={'fill'}
+        position="absolute"
+        bottom="-60"
+      />
+      <Image
+        src={Wave3}
+        h="32"
+        zIndex={'2'}
+        w="full"
+        objectFit={'fill'}
+        position="absolute"
+        overflowX={'hidden'}
+        bottom="-14"
+      />
       <Box
         position="absolute"
         top="0"

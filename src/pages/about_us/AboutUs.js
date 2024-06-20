@@ -24,28 +24,46 @@ export const AboutUs = () => {
   const Goals = ({ title, desc }) => {
     return (
       <Box>
-        <Center
+        <Flex
           flexDirection={'column'}
           justifyContent="center"
           alignItem="center"
         >
-          <Box p="2" borderRadius="full" bg="#E6B242">
-            <FiCheckCircle color="white" size="28" />
-          </Box>
-          <Text
-            mt="2"
-            fontSize="24px"
-            fontFamily={'Rozha One'}
-            color={'#312F2F'}
-          >
-            {title}
-          </Text>
-        </Center>
+          <Flex flexDirection={['row', 'column']} gap="2" alignItems={'center'}>
+            <Box
+              w="fit-content"
+              display={['block', 'none']}
+              p="2"
+              borderRadius="full"
+              bg="#E6B242"
+            >
+              <FiCheckCircle color="white" size={'20'} />
+            </Box>
+            <Box
+              w="fit-content"
+              p="2"
+              display={['none', 'block']}
+              borderRadius="full"
+              bg="#E6B242"
+            >
+              <FiCheckCircle color="white" size={'28'} />
+            </Box>
+            <Text
+              mt="2"
+              fontSize={['20', '24px']}
+              fontFamily={'Rozha One'}
+              color={'#312F2F'}
+              textAlign={['left', 'center']}
+            >
+              {title}
+            </Text>
+          </Flex>
+        </Flex>
         <Text
-          textAlign="center"
-          fontSize="18px"
+          textAlign={['left', 'center']}
+          fontSize={['16', '20px']}
           mt="2"
-          px="8"
+          px={['auto', '8']}
           w="full"
           lineHeight={'30px'}
         >
@@ -90,9 +108,28 @@ export const AboutUs = () => {
           bgGradient="linear(to-r, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0))"
         />
       </Box>
-      <Flex px="40" h="600px" mt="20" gap="32">
-        <Box mt="12" h="580px" w="md" position="relative">
-          <Box top="0" h="60" w="80" position="absolute">
+      <Flex
+        flexDirection={['column-reverse', 'row']}
+        px={['5', '40']}
+        h={['auto', '600px']}
+        mt="20"
+        gap={['10', '32']}
+      >
+        <Box
+          display={['flex', 'block']}
+          flexDirection={'column'}
+          gap="5"
+          mt="12"
+          h={['auto', '580px']}
+          w={['full', 'md']}
+          position="relative"
+        >
+          <Box
+            top="0"
+            h="60"
+            w={['full', '80']}
+            position={['auto', 'absolute']}
+          >
             <Image
               borderRadius={'10px'}
               objectFit={'cover'}
@@ -102,12 +139,12 @@ export const AboutUs = () => {
             />
           </Box>
           <Box
-            boxShadow={'2xl'}
+            boxShadow={'xl'}
             h="80"
-            w="80"
+            w={['full', '80']}
             left="180px"
             top="20"
-            position="absolute"
+            position={['auto', 'absolute']}
             zIndex={'1'}
           >
             <Image
@@ -122,8 +159,8 @@ export const AboutUs = () => {
             h="60"
             borderRadius={'10px'}
             bottom="6"
-            w="80"
-            position="absolute"
+            w={['full', '80']}
+            position={['auto', 'absolute']}
           >
             <Image
               borderRadius={'10px'}
@@ -134,11 +171,11 @@ export const AboutUs = () => {
             />
           </Box>
         </Box>
-        <Box textAlign="left" h="xs" w="540px">
+        <Box textAlign="left" h={['auto', 'xs']} w={['auto', '540px']}>
           <Text
             lineHeight={'50px'}
             color="black"
-            fontSize="48px"
+            fontSize={['34px', '48px']}
             fontFamily={'Rozha One'}
           >
             Conquerors{' '}
@@ -146,7 +183,12 @@ export const AboutUs = () => {
               Abode &<br></br> Properties LTD
             </Text>
           </Text>
-          <Text lineHeight={'42px'} fontSize="18px" mt="5" maxW="445px">
+          <Text
+            lineHeight={'42px'}
+            fontSize={['16', '20px']}
+            mt="5"
+            maxW="445px"
+          >
             Welcome to Conquerors Abode and Properties Ltd, your trusted,
             reliable and premium real estate company .We are dedicated to
             helping you find the perfect property, whether you are looking for
@@ -159,11 +201,11 @@ export const AboutUs = () => {
           </Text>
         </Box>
       </Flex>
-      <Box px="40">
+      <Box px={['5', '40']}>
         <Text
           mt="14"
           lineHeight={'42px'}
-          fontSize="18px"
+          fontSize={['16', '20px']}
           textAlign={'left'}
           color="#282828"
         >
@@ -210,40 +252,43 @@ export const AboutUs = () => {
             alignItem="center"
           >
             <PiFlagCheckeredFill color="#E6B242" size="44" />
-            <Text fontSize="32px" fontFamily={'Rozha One'} color={'#312F2F'}>
+            <Text
+              fontSize={['28', '32px']}
+              fontFamily={'Rozha One'}
+              color={'#312F2F'}
+            >
               MISSION{' '}
               <Text as="span" color="#E6B242">
                 STATEMENT<br></br>
               </Text>{' '}
             </Text>
           </Center>
-          <Text fontSize="22px">
-            To deliver exceptional client experiences by achieving three key{' '}
-            <br></br>
+          <Text fontSize={['18px', '22px']}>
+            To deliver exceptional client experiences by achieving three key
             objectives
           </Text>
 
           <SimpleGrid spacing="10" mt="10" columns={[1, 2]}>
-            <List w="lg" gap="2" display="flex">
+            <List w={['full', 'lg']} gap="2" display="flex">
               <GoDotFill size="36" color="#E6B242" />
-              <ListItem fontSize="20px" textAlign="left">
+              <ListItem fontSize={['16', '20px']} textAlign="left">
                 To provide tailored solutions that meet diverse client need and
                 pocket whether in residential or commercial property.
               </ListItem>
             </List>
 
-            <List w="lg" gap="2" display="flex">
+            <List w={['full', 'lg']} gap="2" display="flex">
               <GoDotFill size="36" color="#E6B242" />
-              <ListItem fontSize="20px" textAlign="left">
+              <ListItem fontSize={['16', '20px']} textAlign="left">
                 We aim to leverage cutting edge technologies to streamline
                 processes, enhance transparency and maximise efficiency in real
                 estate transactions.
               </ListItem>
             </List>
 
-            <List gap="2" w="lg" display="flex">
+            <List gap="2" w={['full', 'lg']} display="flex">
               <GoDotFill size="36" color="#E6B242" />
-              <ListItem fontSize="20px" textAlign="left">
+              <ListItem fontSize={['16', '20px']} textAlign="left">
                 Fostering long term relationship built on trust and transparency
                 is PIVOTAL to us.
               </ListItem>
@@ -258,14 +303,18 @@ export const AboutUs = () => {
             alignItem="center"
           >
             <GoGoal color="#E6B242" size="44" />
-            <Text fontSize="32px" fontFamily={'Rozha One'} color={'#312F2F'}>
+            <Text
+              fontSize={['28', '32px']}
+              fontFamily={'Rozha One'}
+              color={'#312F2F'}
+            >
               VISION{' '}
               <Text as="span" color="#E6B242">
                 STATEMENT<br></br>
               </Text>{' '}
             </Text>
           </Center>
-          <Text fontSize="22px">
+          <Text fontSize={['18px', '22px']}>
             To be the most trusted and leading real estate firm in Nigeria that
             provides lasting <br></br> relationships and results while making
             shelter a reality for all
@@ -281,22 +330,26 @@ export const AboutUs = () => {
             <Box p="2" borderRadius="full" bg="#E6B242">
               <FiCheckCircle color="white" size="28" />
             </Box>
-            <Text fontSize="32px" fontFamily={'Rozha One'} color={'#312F2F'}>
+            <Text
+              fontSize={['28', '32px']}
+              fontFamily={'Rozha One'}
+              color={'#312F2F'}
+            >
               OUR{' '}
               <Text as="span" color="#E6B242">
                 GOALS<br></br>
               </Text>{' '}
             </Text>
           </Center>
-          <Text textAlign="center" fontSize="22px" w="full">
+          <Text textAlign="center" fontSize={['18px', '22px']} w="full">
             These goals reflect our commitment to excellence, integrity, and
-            customer <br></br>satisfaction. Conquerors Abode and Properties Ltd
-            is dedicated to providing <br></br> the best possible real estate
-            experience for our clients.
+            customersatisfaction. Conquerors Abode and Properties Ltd is
+            dedicated to providing the best possible real estate experience
+            for our clients.
           </Text>
 
           <SimpleGrid
-            columns="2"
+            columns={['1', '2']}
             mt="20"
             gap="10"
             justifyContent={'center'}
@@ -345,31 +398,53 @@ export const AboutUs = () => {
               alignItems={'center'}
               w="full"
             >
-              <Center
+              <Flex
                 flexDirection={'column'}
                 justifyContent="center"
                 alignItem="center"
               >
-                <Box p="2" borderRadius="full" bg="#E6B242">
-                  <FiCheckCircle color="white" size="28" />
-                </Box>
-                <Text
-                  mt="2"
-                  fontSize="24px"
-                  fontFamily={'Rozha One'}
-                  color={'#312F2F'}
+                <Flex
+                  flexDirection={['row', 'column']}
+                  gap="2"
+                  alignItems={'center'}
                 >
-                  Growth and Innovation
-                </Text>
-              </Center>
+                  <Box
+                    w="fit-content"
+                    display={['block', 'none']}
+                    p="2"
+                    borderRadius="full"
+                    bg="#E6B242"
+                  >
+                    <FiCheckCircle color="white" size={'20'} />
+                  </Box>
+                  <Box
+                    w="fit-content"
+                    p="2"
+                    display={['none', 'block']}
+                    borderRadius="full"
+                    bg="#E6B242"
+                  >
+                    <FiCheckCircle color="white" size={'28'} />
+                  </Box>
+                  <Text
+                    mt="2"
+                    fontSize={['20', '24px']}
+                    fontFamily={'Rozha One'}
+                    color={'#312F2F'}
+                    textAlign={['left', 'center']}
+                  >
+                    Growth and Innovation
+                  </Text>
+                </Flex>
+              </Flex>
               <Text
-                textAlign="center"
-                fontSize="18px"
+                textAlign={['left', 'center']}
+                fontSize={['16', '20px']}
                 mt="2"
                 fontWeight={'400'}
-                px="6"
+                px={['0', '6']}
                 lineHeight={'30px'}
-                w="lg"
+                w={['full', 'lg']}
               >
                 We are committed to continuous growth and innovation in our
                 industry. Our goal is to constantly enhance our services and
@@ -381,9 +456,9 @@ export const AboutUs = () => {
           </Box>
         </Box>
 
-        <Box mt="28">
+        <Box mt={['20', '28']}>
           <Text
-            fontSize="32px"
+            fontSize={['28', '36px']}
             fontWeight="500"
             color="#282828"
             textTransform={'uppercase'}
@@ -400,7 +475,7 @@ export const AboutUs = () => {
           <Text
             mt="3"
             color="#282828"
-            fontSize="18px"
+            fontSize={['16', '20px']}
             textAlign="left"
             lineHeight={'42px'}
           >
