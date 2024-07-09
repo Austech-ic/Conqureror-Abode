@@ -9,16 +9,38 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
+  SimpleGrid,
   Text,
 } from '@chakra-ui/react';
 import React from 'react';
 import { BsFillHouseFill } from 'react-icons/bs';
 import { GrUserWorker } from 'react-icons/gr';
-import { GoChevronDown } from 'react-icons/go';
+import { GoChevronDown, GoProjectSymlink } from 'react-icons/go';
 import { IoIosCheckmarkCircleOutline } from 'react-icons/io';
+import { MdDesignServices } from 'react-icons/md';
 export const LandingPageServices = () => {
+  const ServiceButton = ({ icon, title }) => {
+    return (
+      <Button
+        px="2"
+        py="5"
+        size="xl"
+        width={['auto', 'full']}
+        justifyContent="flex-start"
+        borderRadius={'6px'}
+        flexGrow={'1'}
+        bg="white"
+        leftIcon={icon}
+        fontWeight={'400'}
+        fontSize={['14', '20']}
+      >
+        {' '}
+        {title}
+      </Button>
+    );
+  };
   return (
-    <Box px={['5', '40']} py="20" bg="#F3F4FF" h={['auto', '60vh']}>
+    <Box px={['5', '40']} py="20" bg="#F3F4FF" h={['auto', 'auto']}>
       <Heading
         w="fit-content"
         borderLeft={'4px solid #E6B242'}
@@ -33,34 +55,28 @@ export const LandingPageServices = () => {
         </Text>
       </Heading>
       <Text fontSize={['16', '24px']} textAlign={'left'} mt="3">
-        Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc <br></br>{' '}
-        vulputate libero et velit interdum, ac aliquet odio mattis.
+        Our comprehensive services include:
       </Text>
 
-      <Flex flexDirection={['column', 'row']} gap="5" mt="10">
-        <Button
-          pl="5"
-          py="5"
-          size="xl"
-          width={['auto', '50%']}
-          justifyContent="flex-start"
-          borderRadius={'6px'}
-          flexGrow={'1'}
-          bg="white"
-          leftIcon={<BsFillHouseFill color="#E6B242" size={'28'} />}
-          fontWeight={'400'}
-          fontSize={['14', '20']}
-        >
-          {' '}
-          Real Estate
-        </Button>
+      <SimpleGrid
+        columns={[1, 2]}
+        flexDirection={['column', 'row']}
+        rowGap={'5'}
+        columnGap={'7'}
+        mt="10"
+      >
+        <ServiceButton
+          title="Builder & Civil Engineers"
+          icon={<BsFillHouseFill color="#E6B242" size={'24'} />}
+        />
+
         <Menu>
           <MenuButton
             textAlign={'left'}
-            px="5"
+            px="2"
             py="5"
             size="xl"
-            width={['auto', '50%']}
+            width={['auto', 'full']}
             justifyContent="flex-start"
             borderRadius={'6px'}
             flexGrow={'1'}
@@ -68,11 +84,12 @@ export const LandingPageServices = () => {
             color="black"
             as={Button}
             rightIcon={<GoChevronDown />}
-            leftIcon={<GrUserWorker color="#E6B242" size="28" />}
+            leftIcon={<GrUserWorker color="#E6B242" size="24" />}
             fontWeight={'400'}
             fontSize={['14', '20']}
           >
-            Builder & Civil Engineers
+            {' '}
+            Real Estate
           </MenuButton>
           <MenuList w={['xs', 'sm']} py="0">
             <MenuItem gap="2" as="a" href="#">
@@ -104,7 +121,30 @@ export const LandingPageServices = () => {
             </MenuItem>
           </MenuList>
         </Menu>
-      </Flex>
+        <ServiceButton
+          title="Property Sales and Leasing"
+          icon={<BsFillHouseFill color="#E6B242" size={'24'} />}
+        />
+
+        <ServiceButton
+          title="Real Estate Investment Advisory"
+          icon={<BsFillHouseFill color="#E6B242" size={'24'} />}
+        />
+        <ServiceButton
+          title="Property Valuation and Appraisal
+"
+          icon={<BsFillHouseFill color="#E6B242" size={'24'} />}
+        />
+        <ServiceButton
+          title="Architectural Design and Planning
+"
+          icon={<MdDesignServices color="#E6B242" size={'24'} />}
+        />
+        <ServiceButton
+          title="Project Management and Supervision"
+          icon={<GoProjectSymlink color="#E6B242" size={'24'} />}
+        />
+      </SimpleGrid>
     </Box>
   );
 };
