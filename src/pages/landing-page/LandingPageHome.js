@@ -95,9 +95,8 @@ export const LandingPageHome = () => {
             zIndex={'2'}
             fontWeight={'300'}
           >
-            Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            <br></br>
-            vulputate libero et velit interdum, ac aliquet odio mattis.
+            We're here to help you find the perfect property, whether it's your
+            dream home or a great investment.
           </Text>
 
           <Button

@@ -15,6 +15,12 @@ import CoverImage from '../../assets/images/cover_image.png';
 import { GiCornerFlag } from 'react-icons/gi';
 import { MdOutlineBed } from 'react-icons/md';
 import { LuBath } from 'react-icons/lu';
+import TwoBedroomTerraceDuplex from '../../assets/images/Terrace Duplex.jpg';
+import FullyDetachedBungalow from '../../assets/images/Detached Bungalow.jpg';
+import SEMIDETACHEDBUNGALOW from '../../assets/images/DETACHED BUNGALOW semi.jpg';
+import FOURBEDROOMTERRACEDUPLEX from '../../assets/images/4 BEDROOM TERRACE.jpg';
+import FULLYDETACHEDDUPLEXWITHATTACHED from '../../assets/images/FULLY DETACHED DUPLEX WITH ATTACHED .jpg';
+import KURUDU from '../../assets/images/KURUDU.jpg';
 export const LandingPageFeaturedProperties = () => {
   const Properties = ({ image, sqf, description, beds, baths, price }) => {
     return (
@@ -25,9 +31,9 @@ export const LandingPageFeaturedProperties = () => {
         border={'1px solid #F5F5F5'}
       >
         <Flex h={['auto', '60']} flexDirection={['column', 'row']}>
-          <Box h={['52', '60']} w={['full', '60']}>
+          <Box h={['52', '60']} w={['full', '30']}>
             <Image
-              objectFit={'fill'}
+              objectFit={'cover'}
               h="full"
               w="full"
               src={image}
@@ -46,11 +52,12 @@ export const LandingPageFeaturedProperties = () => {
           <Flex
             position={'relative'}
             h={['60', 'full']}
+            w={['full', '70']}
             flexDirection={'column'}
             px="3"
             pt="4"
           >
-            <Text fontWeight="500" fontSize="16" textAlign={'left'}>
+            <Text fontWeight="500" fontSize="14" textAlign={'left'}>
               {description}
             </Text>
             <Divider mt="4" />
@@ -61,22 +68,26 @@ export const LandingPageFeaturedProperties = () => {
                   {sqf}
                 </Text>
               </Flex>
-              <Flex gap="1">
-                <MdOutlineBed size="20" color="#E6B242" />
-                <Text color="#282828" fontSize={'12'}>
-                  {beds}
-                </Text>
-              </Flex>
-              <Flex gap="1">
-                <LuBath size="20" color="#E6B242" />
-                <Text color="#282828" fontSize={'12'}>
-                  {baths}
-                </Text>
-              </Flex>
+              {beds && (
+                <Flex gap="1">
+                  <MdOutlineBed size="20" color="#E6B242" />
+                  <Text color="#282828" fontSize={'12'}>
+                    {beds}
+                  </Text>
+                </Flex>
+              )}
+              {baths && (
+                <Flex gap="1">
+                  <LuBath size="20" color="#E6B242" />
+                  <Text color="#282828" fontSize={'12'}>
+                    {baths}
+                  </Text>
+                </Flex>
+              )}
             </Flex>
             <Divider />
 
-            <Box position={'absolute'} left="5" bottom="4" textAlign={'left'}>
+            <Box position={'absolute'} left="5" bottom="2" textAlign={'left'}>
               <Text fontSize={'sm'} color={'#8C8C8C'}>
                 Price
               </Text>
@@ -111,52 +122,54 @@ export const LandingPageFeaturedProperties = () => {
       <Center>
         <SimpleGrid mt="20" spacing="10" columns={['1', '2']}>
           <Properties
-            image={House}
-            sqf={'8000sqf'}
-            beds={'4 Beds'}
-            baths={'4 Baths'}
-            price={'₦1,200,000.00'}
-            description={'A 3 Bedroom Apartment, Ikoyi, lagos, Nigeria.'}
+            image={TwoBedroomTerraceDuplex}
+            sqf={'180sqm'}
+            // beds={'4 Beds'}
+            // baths={'4 Baths'}
+            price={'5 M'}
+            description={'2 BEDROOM TERRACE DUPLEX'}
           />
           <Properties
-            image={CoverImage}
-            sqf={'8000sqf'}
-            beds={'4 Beds'}
-            baths={'4 Baths'}
-            price={'₦1,200,000.00'}
-            description={'A 3 Bedroom Apartment, Ikoyi, lagos, Nigeria.'}
+            image={FullyDetachedBungalow}
+            sqf={'250 sqm'}
+            // beds={'4 Beds'}
+            // baths={'4 Baths'}
+            price={'2.5M'}
+            description={'2 BEDROOM FULLY DETACHED BUNGALOW'}
           />
           <Properties
-            image={CoverImage}
-            sqf={'8000sqf'}
-            beds={'4 Beds'}
-            baths={'4 Baths'}
-            price={'₦1,200,000.00'}
-            description={'A 3 Bedroom Apartment, Ikoyi, lagos, Nigeria.'}
+            image={FOURBEDROOMTERRACEDUPLEX}
+            sqf={'250sqm'}
+            // beds={'4 Beds'}
+            // baths={'4 Baths'}
+            price={'6M'}
+            description={'4 BEDROOM TERRACE DUPLEX'}
           />
           <Properties
-            image={House}
-            sqf={'8000sqf'}
-            beds={'4 Beds'}
-            baths={'4 Baths'}
-            price={'₦1,200,000.00'}
-            description={'A 3 Bedroom Apartment, Ikoyi, lagos, Nigeria.'}
+            image={SEMIDETACHEDBUNGALOW}
+            sqf={'300sqm'}
+            // beds={'4 Beds'}
+            // baths={'4 Baths'}
+            price={'3M'}
+            description={'3 BEDROOM SEMI DETACHED BUNGALOW'}
           />
           <Properties
-            image={House}
-            sqf={'8000sqf'}
-            beds={'4 Beds'}
-            baths={'4 Baths'}
-            price={'₦1,200,000.00'}
-            description={'A 3 Bedroom Apartment, Ikoyi, lagos, Nigeria.'}
+            image={FULLYDETACHEDDUPLEXWITHATTACHED}
+            sqf={'500sqm'}
+            // beds={'4 Beds'}
+            // baths={'4 Baths'}
+            price={'4.5M'}
+            description={'5 BEDROOM FULLY DETACHED DUPLEX WITH ATTACHED'}
           />
           <Properties
-            image={CoverImage}
-            sqf={'8000sqf'}
-            beds={'4 Beds'}
-            baths={'4 Baths'}
-            price={'₦1,200,000.00'}
-            description={'A 3 Bedroom Apartment, Ikoyi, lagos, Nigeria.'}
+            image={KURUDU}
+            sqf={'600sqm'}
+            // beds={'4 Beds'}
+            // baths={'4 Baths'}
+            price={'5.5M'}
+            description={
+              '5/6 BEDROOM FULLY DETACHED DUPLEX WITH DETACHED BQ,Deeper Life Road, Beside Army Corporative Estate 4, KURUDU Abuja'
+            }
           />
         </SimpleGrid>{' '}
       </Center>

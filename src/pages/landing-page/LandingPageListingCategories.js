@@ -34,7 +34,7 @@ export const LandingPageListingCategories = () => {
             Residential
           </Text>
         </Box>
-        <Box border="1px solid #DCE1E7" borderRadius={'6px'}>
+        {/* <Box border="1px solid #DCE1E7" borderRadius={'6px'}>
           <Image borderTopRadius={'5px'} src={CoverImage} />
           <Text
             fontSize="20px"
@@ -72,7 +72,7 @@ export const LandingPageListingCategories = () => {
           >
             Investment
           </Text>
-        </Box>
+        </Box> */}
       </SimpleGrid>
     </Box>
   );
