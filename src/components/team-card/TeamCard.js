@@ -24,13 +24,14 @@ export const TeamCard = ({ jobTitle, name, image }) => {
         borderRadius={'12px'}
         border="1px solid #F5F5F5"
       >
-        <Box h="70%">
+        <Box h="75%">
           <Image
             border="0"
             borderTopRadius={'12px'}
             h="full"
             w="full"
             src={image}
+            objectFit={'cover'}
           />
         </Box>
         <Box h="20%" bottom="2" left="5" position="absolute" textAlign={'left'}>

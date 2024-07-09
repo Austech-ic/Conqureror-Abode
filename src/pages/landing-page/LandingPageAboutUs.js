@@ -1,5 +1,8 @@
-import { Box, Button, Flex, Heading, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, Image, Text } from '@chakra-ui/react';
 import React from 'react';
+import Image1 from '../../assets/images/WhatsApp Image 2024-06-27 at 20.12.55_910148cb.jpg';
+import Image2 from '../../assets/images/WhatsApp Image 2024-06-27 at 20.12.55_9b86b5c4.jpg';
+import Image3 from '../../assets/images/WhatsApp Image 2024-06-27 at 20.12.55_b6e9eac6.jpg';
 
 export const LandingPageAboutUs = () => {
   return (
@@ -39,7 +42,10 @@ export const LandingPageAboutUs = () => {
             bg="#BF8181"
             borderRadius={'10px'}
             position={['auto', 'absolute']}
-          ></Box>
+            overflow={'hidden'}
+          >
+            <Image h="full" w="full" objectFit="cover" src={Image3} />
+          </Box>
           <Box
             h="72"
             w="72"
@@ -49,7 +55,12 @@ export const LandingPageAboutUs = () => {
             borderRadius={'10px'}
             position={['auto', 'absolute']}
             zIndex={'1'}
-          ></Box>
+            overflow={'hidden'}
+            boxShadow={'3xl'}
+          >
+            {' '}
+            <Image h="full" w="full" objectFit="cover" src={Image1} />
+          </Box>
           <Box
             h="32"
             borderRadius={'10px'}
@@ -57,7 +68,11 @@ export const LandingPageAboutUs = () => {
             w="60"
             bg="#BF8181"
             position={['auto', 'absolute']}
-          ></Box>
+            overflow={'hidden'}
+          >
+            {' '}
+            <Image h="full" w="full" objectFit="cover" src={Image2} />
+          </Box>
         </Box>
         <Box textAlign="left" h={['auto', 'xs']} w={['full', '540px']}>
           <Text
